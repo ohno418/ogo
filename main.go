@@ -1,22 +1,22 @@
 package main
 
 import (
-  "fmt"
-  "os"
+	"fmt"
+	"os"
 )
 
 func main() {
-  args := os.Args;
-  if len(args) < 2 {
-    panic("Args required")
-  }
+	args := os.Args
+	if len(args) < 2 {
+		panic("Args required")
+	}
 
-  var input string = args[1]
+	var input string = args[1]
 
-  fmt.Println(".intel_syntax noprefix")
-  fmt.Println(".globl main")
-  fmt.Println("")
-  fmt.Println("main:")
-  fmt.Println("  mov rax, " + input)
-  fmt.Println("  ret")
+	fmt.Println(".intel_syntax noprefix")
+	fmt.Println(".globl main")
+	fmt.Println("")
+	fmt.Println("main:")
+	fmt.Println("  mov rax, " + input)
+	fmt.Println("  ret")
 }
