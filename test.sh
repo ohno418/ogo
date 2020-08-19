@@ -5,7 +5,7 @@ assert()
   input="$1"
   expected="$2"
 
-  ./occ "$input" > tmp.s
+  ./ogo "$input" > tmp.s
   gcc --static -o tmp tmp.s
   ./tmp
   actual="$?"
@@ -19,7 +19,7 @@ assert()
   fi
 }
 
-go build -o occ main.go
+go build -o ogo main.go
 
 assert 0 0
 assert 42 42
