@@ -9,7 +9,7 @@ func debugToken(tok *Token) {
 	cnt := 0
 	for {
 		fmt.Println("token", cnt, ":", tok)
-		tok = tok.Next
+		tok = tok.next
 		cnt++
 
 		if tok == nil {

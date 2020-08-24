@@ -13,11 +13,11 @@ const (
 )
 
 type Token struct {
-	Next *Token
-	Kind TokenKind
+	next *Token
+	kind TokenKind
 
 	// Number
-	Num int
+	val int
 }
 
 func tokenize(input string) *Token {
@@ -40,15 +40,15 @@ func tokenize(input string) *Token {
 
 		if isNum(c) {
 			num, _ := getNum(rest)
-			cur.Next = &Token{Kind: TK_NUM, Num: num}
-			cur = cur.Next
+			cur.next = &Token{kind: TK_NUM, val: num}
+			cur = cur.next
 			rest = rest[len(strconv.Itoa(num)):len(rest)]
 			continue
 		}
 
 		if c == "+" {
-			cur.Next = &Token{Kind: TK_ADD}
-			cur = cur.Next
+			cur.next = &Token{kind: TK_ADD}
+			cur = cur.next
 			rest = rest[1:len(rest)]
 			continue
 		}
@@ -56,7 +56,7 @@ func tokenize(input string) *Token {
 		raiseUnexpectedChar(input, len(input)-len(rest))
 	}
 
-	return head.Next
+	return head.next
 }
 
 func isNum(str string) bool {
