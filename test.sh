@@ -19,7 +19,7 @@ assert()
   fi
 }
 
-go build -o ogo main.go
+go build
 
 assert 0 0
 assert 42 42
