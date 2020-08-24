@@ -6,14 +6,15 @@ import (
 	"strconv"
 )
 
+type TokenKind int
 const (
-	TK_NUM = iota
+	TK_NUM TokenKind = iota
 	TK_ADD
 )
 
 type Token struct {
 	Next *Token
-	Kind int
+	Kind TokenKind
 
 	// Number
 	Num int
