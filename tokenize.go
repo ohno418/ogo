@@ -16,7 +16,7 @@ type Token struct {
 	next *Token
 	kind TokenKind
 
-	// Number
+	// TK_NUM
 	val int
 }
 

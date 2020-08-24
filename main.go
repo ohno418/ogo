@@ -13,8 +13,8 @@ func main() {
 
 	var input string = args[1]
 	tok := tokenize(input)
-	debugToken(tok)
-	// TODO
+	node := parse(tok)
+	// TODO: codegen
 
 	fmt.Println(".intel_syntax noprefix")
 	fmt.Println(".globl main")
