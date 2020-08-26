@@ -4,7 +4,6 @@ import (
 	"fmt"
 )
 
-/* Debugger */
 func debugToken(tok *Token) {
 	cnt := 0
 	for {

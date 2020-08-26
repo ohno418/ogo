@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 )
 
@@ -11,15 +10,8 @@ func main() {
 		panic("Args required")
 	}
 
-	var input string = args[1]
+	input := args[1]
 	tok := tokenize(input)
 	node := parse(tok)
-	// TODO: codegen
-
-	fmt.Println(".intel_syntax noprefix")
-	fmt.Println(".globl main")
-	fmt.Println("")
-	fmt.Println("main:")
-	fmt.Println("  mov rax, " + input)
-	fmt.Println("  ret")
+	codegen(node)
 }

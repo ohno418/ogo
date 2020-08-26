@@ -1,6 +1,7 @@
 package main
 
 type NodeKind int
+
 const (
 	ND_NUM NodeKind = iota
 	ND_ADD

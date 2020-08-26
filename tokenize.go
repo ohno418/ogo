@@ -7,6 +7,7 @@ import (
 )
 
 type TokenKind int
+
 const (
 	TK_NUM TokenKind = iota
 	TK_ADD
